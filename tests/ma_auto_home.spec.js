@@ -101,7 +101,26 @@ test ('sort name Z to A', async({page}) => {
     await expect(cartBadge).toHaveText('2');
  })
 
+ //remove item from card
+ test('remove button',async({page}) => {
+    const removeBtn = page.locator ('.btn.btn_secondary.btn_small.btn_inventory');
+    const addToCartBtn = page.locator('.btn.btn_primary.btn_small.btn_inventory');
+    const numberBadge = page.locator('[data-test="shopping-cart-badge"]');
+    
+    await (addToCartBtn).nth(0).click();
+    await (addToCartBtn).nth(1).click();
+    await (addToCartBtn).nth(2).click();
+
+    await (removeBtn).nth(0).click();
+
+    await expect (numberBadge).toHaveText('2');
+}) 
+
  // open item detail
  test('Open item detail',async({page})=> {
-    
+    // const imageHyperLink = page.locator('[data-test="item-4-img-link"]');
+    const imageHyperLink = page.locator('.inventory_item_img').first();
+    await (imageHyperLink).click();
+
+    await expect(page).toHaveURL(/inventory-item\.html\?id=\d+/);
  })
