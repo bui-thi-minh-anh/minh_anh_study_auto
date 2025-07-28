@@ -1,0 +1,184 @@
+// ** Viết hàm kiểm tra chẵn , lẻ **
+
+// function kiemtrachanle(num){
+//     if (num % 2 === 0){
+//         return "so chan";
+//     }
+//     else {
+//         return "so le";
+//     }
+// }
+
+// console.log(kiemtrachanle(4));
+
+// ** Ham tinh tong 2 so
+
+// function tinhtong(a,b){
+//     return (a+b);
+// }
+
+// console.log(tinhtong(4,7));
+
+// ** Hàm tính bình phương
+
+// function binhphuong (x){
+//     return (x*x);
+// }
+
+// console.log(binhphuong(4));
+
+// ** Ham tính giai thừa
+
+// function giaithua(a){
+//     let tich_giai_thua = 1;
+//     for(let i = 1; i <= a; i++){
+//       tich_giai_thua *= i;
+//     }
+//     return tich_giai_thua;
+// }
+// console.log(giaithua(4));
+
+// ** Viết hàm kiểm tra số chia hết cho cả 3 và 5
+
+// function kiem_tra_chia_het_3_5(a){
+//     if ( a % 15 === 0){
+//        return "so này vừa chia hết cho 3 vừa chia hết cho 5: " + a;
+//     }
+//     else {
+//         return ("số này không chia hết cho cả 3 và 5");
+//     }
+// }
+// console.log(kiem_tra_chia_het_3_5(15));
+
+// ** Viết hàm kiểm tra số có 3 chữ số và chia hết cho 5
+
+// function kiem_tra_so_3chuso_chia_het_5(a){
+//     if (a / 100 < 1 || a / 100 >= 10){
+//         return "Không phải số có 3 chữ số";
+//     }
+//         if ( a % 5 !== 0){
+//             return "Số 3 chữ số nhưng không chia hết cho 5";
+//         }
+//         else {
+//             return "Số có 3 chữ số và chia hết cho 3 đây rồi, hihi: " + a;
+//         }
+// }
+// console.log(kiem_tra_so_3chuso_chia_het_5(1000));
+
+// Note: nhờ chatGPT review nó bảo bạn làm phức tạp quá, nhưng mà kệ tôi, con gái chúng tôi là phải phức tạp.
+
+// ** Viết hàm kiểm tra số nguyên tố
+
+// function so_nguyen_to(a){ // Cách 1
+//     let chia_het = 0;
+//     for (let i = 1; i <= a; i++){
+//         if (a % i === 0){
+//             chia_het += 1;
+//         }
+//         else (chia_het += 0 );
+//     }
+//     if (chia_het === 2){
+//         return "Đây là số nguyên tố: " + a;
+//     }
+//     else {
+//         return "Đây không phải là số nguyên tố";
+//     }
+// }
+// console.log(so_nguyen_to(13));
+
+// function so_nguyen_to(a){ // Cách 2 chỉ chạy đến căn bậc 2 của số đó
+//     let chia_het = 0;
+//     for (let i = 2; i <= Math.sqrt(a); i++){
+//         if (a % i === 0){
+//             chia_het += 1;
+//         }
+//         else (chia_het += 0 );
+//     }
+//     if (chia_het === 0){
+//         return "Đây là số nguyên tố: " + a;
+//     }
+//     else {
+//         return "Đây không phải là số nguyên tố";
+//     }
+// }
+// console.log(so_nguyen_to(131));
+
+// // // ** In bảng cửu chương của một số **
+
+// function bang_cuu_chuong(a){
+//     let ket_qua = "";
+//     if (a < 2 || a >= 10){
+//         return "Không có bảng cửu chương của số này";
+//     }
+//     else {
+//         for(let i = 1; i <= 10; i++){
+//             ket_qua += a + "x" + i + "=" + (a * i) + "\n";
+//         }
+//     }
+//     return ket_qua;
+// }
+// console.log(bang_cuu_chuong(4));
+
+// ** Viết hàm trả về thông tin cá nhân của nhân viên **
+
+// function NV_infor(id, name, age, role){
+//     return (`Tên nhân viên là: ${name} \nMã nhân viên: ${id} \nTuổi: ${age} \nRole: ${role}`);
+// }
+// console.log (NV_infor("01", "Minh Anh", 26, "MQC"));
+
+// * Viết hàm trả về true nếu là số chẵn và false nếu là số lẻ
+
+// function ham_chan_le(a){
+//     if (a % 2 === 0){
+//         a = true;
+//     }
+//     else {
+//         a = false;
+//     }
+//     return a;
+// }
+// console.log(ham_chan_le(700001)); // Trả luôn về true / false chứ không cần a = nữa.
+
+// ** Hàm đếm số số chẵn và lẻ trong 1 mảng
+
+// function dem_chan_le(arr[1, 7, 10, 16, 19, 28, 346]){
+//     for( let num of arr){
+//         if (num % 2 === 0){
+
+//         }
+//     }
+// }
+
+// ** Hàm in ra tất cả bảng cửu chương từ 2 -> 9 theo hàng ngang **
+
+// function Multiplication_table (){
+//     let x = 1;
+//     let in_bang = "";
+//         for(let i = 2; i < 10; i++){
+//             // return (`${x} x ${i} = ${x * i}`   );
+//             in_bang += i + "x" + x + "=" + (x * i) + "  ";
+//         }
+//         return in_bang;
+// }
+// console.log (Multiplication_table());
+
+function Multiplication_table (){
+    // let x = 1;
+
+    let in_bang_cuu_chuong = "";
+    for (let x = 1; x < 10; x++){
+        let in_bang = "";
+        for(let i = 2; i < 10; i++){
+            // return (`${x} x ${i} = ${x * i}`   );
+            // in_bang += i + "x" + x + "=" + (x * i) + "  ";
+            in_bang += (i + "x" + x + "=" + (x * i)).padEnd(6, " ")+ "  ";
+            // in_bang_cuu_chuong = in_bang + "\n";
+        }
+
+        in_bang_cuu_chuong += in_bang + "\n"
+
+    }
+        // return in_bang_cuu_chuong;
+        return in_bang_cuu_chuong;
+}
+console.log (Multiplication_table());
