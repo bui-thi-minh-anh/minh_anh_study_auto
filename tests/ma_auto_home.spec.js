@@ -124,3 +124,11 @@ test ('sort name Z to A', async({page}) => {
 
     await expect(page).toHaveURL(/inventory-item\.html\?id=\d+/);
  })
+
+ // check button card
+ test('Open card' , async({page}) => {
+    const cardIcon = page.locator('[data-test="shopping-cart-link"]');
+    await (cardIcon).click();
+
+    await expect (page).toHaveURL('https://www.saucedemo.com/cart.html');
+ })
